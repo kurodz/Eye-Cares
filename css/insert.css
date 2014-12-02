@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+.inforight {
+	position: absolute;
+	clear: none;
+	margin-top: 18em;
+	left: 45%;
+	width: 55%;
+	float: none;
+}
+#Datepicker1 {
+	position: absolute;
+	left: 45%;
+	clear: none;
+	width: 55%;
+	float: none;
+}
+div.ui-input-text {
+    width: 70% !important
+}
+
+.addcts {
+	position: fixed;
+	left: 24%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#insertform .inforight img {
+	float: right;
+	padding-left: 26px;
+	position: relative;
+	left: -24%;
+
+
+
+
+}
+div #Datepicker1 #title {
+	padding-left: 58px;
+	color: #9E2527;
+}
+#showPhoto {
+	border: thin solid #000000;
+	border-radius: 20px;
+
+}
+
+
+
+
+@media screen and (max-width:640px){
+.inforight {
+	position: absolute;
+	clear: none;
+	margin-top: 305px;
+	left: 40%;
+	width: 55%;
+}
+.addcts {
+	position: fixed;
+	left: 10%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#Datepicker1 {
+	position: absolute;
+	left: 40%;
+	clear: none;
+	width: 55%;
+}
+#insertform .inforight img {
+	position: relative;
+	float: right;
+	left: -20%;
+
+
+
+
+}
+
+
+
+
+}
