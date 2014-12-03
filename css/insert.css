@@ -18,13 +18,6 @@
 div.ui-input-text {
     width: 70% !important
 }
-
-.addcts {
-	position: fixed;
-	left: 24%;
-	margin-left: auto;
-	margin-right: auto;
-}
 #insertform .inforight img {
 	float: right;
 	padding-left: 26px;
@@ -41,8 +34,40 @@ div #Datepicker1 #title {
 }
 #showPhoto {
 	border: thin solid #000000;
-	border-radius: 20px;
+	position: static;
 
+}
+.wrapper {
+	position: absolute;
+	top: 0%;
+	margin-left: 12%;
+}
+
+<style>
+div.wrapper{
+	float:left; /* important */
+	position:relative; /* important(so we can absolutely position the description div */ 
+}
+div.description{
+	position: absolute; /* absolute position (so we can position it where we want)*/
+	bottom: 0px; /* position will be on bottom */
+	left: 0px;
+	/* styling bellow */
+	background-color: black;
+	font-family: 'tahoma';
+	font-size: 15px;
+	color: white;
+	opacity: 0.6; /* transparency */
+	filter: alpha(opacity=60); /* IE transparency */
+	width: 153px;
+}
+p.description_content{
+	padding-top: 9px;
+	padding-right: 9px;
+	padding-left: 9px;
+	padding-bottom: 9px;
+	margin: 0px;
+	text-decoration: none;
 }
 
 
@@ -55,12 +80,6 @@ div #Datepicker1 #title {
 	margin-top: 305px;
 	left: 40%;
 	width: 55%;
-}
-.addcts {
-	position: fixed;
-	left: 10%;
-	margin-left: auto;
-	margin-right: auto;
 }
 #Datepicker1 {
 	position: absolute;
@@ -77,6 +96,87 @@ div #Datepicker1 #title {
 
 
 }
+
+
+
+
+}
+
+@media screen and (max-width:360px){
+.inforight {
+	position: absolute;
+	clear: none;
+	margin-top: 125%;
+	left: 18%;
+	width: 66%;
+}
+#Datepicker1 {
+	position: absolute;
+	clear: none;
+	float: none;
+	margin-top: 59%;
+	left: 4%;
+}
+div.ui-input-text {
+
+
+}
+#insertform .inforight img {
+	float: right;
+	padding-left: 26px;
+	position: relative;
+	left: -24%;
+
+
+
+
+}
+div #Datepicker1 #title {
+	color: #9E2527;
+	position: absolute;
+	top: -12%;
+	margin-left: 6px;
+	width: 205px;
+}
+#showPhoto {
+	border: thin solid #000000;
+	position: absolute;
+	border-radius: 10px;
+
+}
+.wrapper {
+	position: absolute;
+	margin-top: 32px;
+	left: 15%;
+}
+p.description_content {
+	padding-top: 9px;
+	padding-right: 9px;
+	padding-left: 9px;
+	padding-bottom: 9px;
+	margin: 0px;
+	text-decoration: none;
+}
+div.description {
+	position: static;
+	/* styling bellow */
+	background-color: black;
+	font-family: 'tahoma';
+	font-size: 15px;
+	color: white;
+	opacity: 0.6; /* transparency */
+	filter: alpha(opacity=60); /* IE transparency */
+	width: 153px;
+	margin-top: 109px;
+	text-align: center;
+	height: 36px;
+}
+
+
+
+
+
+
 
 
 

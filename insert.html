@@ -36,7 +36,26 @@
 	var today = date.getFullYear() + "-" + (currentMonth) + "-" + (currentDate);
 	document.write(today);</script>
       </label></div>
-<p><a href="" onClick="takePhoto();"><img id="showPhoto" src="images/addcontacts.png" alt="" width="151" height="143" class="addcts"/></a></p>
+      
+      
+      
+<p></p>
+
+<div class='wrapper'>  
+    <!-- image -->  
+      <a href="" onClick="takePhoto();"><img id="showPhoto" src="images/addcontacts.png" alt="" width="151" height="143"/></a>
+    <!-- description div -->  
+    <div class='description'>  
+        <!-- description content -->  
+        <p class='description_content'><img src="images/camera.png" width="20" height="20" alt=""/> Get a Picture  </p>  
+        <!-- end description content -->  
+    </div>  
+    <!-- end description div -->  
+</div>  
+
+
+
+
 <form id="insertform">
     <section class="inforight">
     <p><input name="ctName" type="text" id="ctName" placeholder="請輸入隱形眼鏡名稱"></p>
@@ -98,7 +117,7 @@ $(function() {
 					document.getElementById("title").innerHTML = "選擇配戴日期："+ i;
 					
 
-			},changeYear: true,yearRange : '2012:2015'
+			},changeYear: true,yearRange : '2014:2020'
 		
 		}
 		)

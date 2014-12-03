@@ -25,7 +25,7 @@ function dbShow(){  // 顯示全部資料
 				var data = "你總共有："+ r.rows.length + " 組<br><hr><br>";
 				if(r.rows.length==0){data="您還沒有輸入資料";}			
                 for (var i = 0, c = r.rows.length; i < c; i++) {
-					data +=  "<tr><td><a href='file:///sdcard/ppl/"+r.rows.item(i).pname+".jpg' data-lightbox='file'>"+"<img src='file:///sdcard/ppl/"+r.rows.item(i).pname+".jpg' onerror='imgError(this);' width=100 height=140/></a></td>" + "<td>"+
+					data +=  "<tr><td><a href='file:///sdcard/EyeCares/"+r.rows.item(i).pname+".jpg' data-lightbox='file'>"+"<img id='profileimg' src='file:///sdcard/EyeCares/"+r.rows.item(i).pname+".jpg' width=100 height=140 onerror='imgError(this);'/></a></td>" + "<td>"+
 					r.rows.item(i).id + "</td>" + "<td>"+r.rows.item(i).username + "</td>" + "<td>" + r.rows.item(i).color + "</td>" + "<td>" + r.rows.item(i).hl + "</td>";
 					
                 }
@@ -53,13 +53,13 @@ $('#example').dataTable();
 
 function imgError(image) {
     image.onerror = "";
-    image.src = "ppl/nopic.jpg";
+    image.src = "images/nopic.jpg";
 	image.style.width = "50px";
 	image.style.height = "50px";
-	image.id ="nopic";
-	$('#nopic').unwrap();
-	$('#nopic').wrap("<a href='ppl/nopic.jpg' data-lightbox='file'></a>");
+	$(image).unwrap();
+	$(image).wrap("<a href='images/nopic.jpg' data-lightbox='file'></a>");
 		 
     return true;
-}
+} 
 
+  

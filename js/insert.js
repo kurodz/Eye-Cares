@@ -15,8 +15,6 @@ function dbInsert() {  // 新增資料
             alert('資料庫尚未建立！');
             return;
         }
-		
-		alert(fName);
 		var righteye = document.getElementById("ctRe").value;
 		var lefteye = document.getElementById("ctLe").value;
 		var cname = document.getElementById("ctName").value;
@@ -93,7 +91,7 @@ function dbInsert() {  // 新增資料
 			t.executeSql("INSERT INTO table01 (username,company,memo,dt,hl,pname,color,Left,Right) VALUES (?,?,?,?,?,?,?,?,?)",
 			
 			[cname, cpy, memo, sDate, hhh, fName, color, lefteye, righteye],
-			function() { alert('資料新增成功!！');},
+			function() { alert('資料新增成功!！');window.location.href="index.html";},
 			function() { alert("資料新增失敗!"); });
 					
 					
@@ -122,7 +120,7 @@ function dbDrop() {  // 刪除資料表
 			
 			
 // Camera
-function takePhoto() { //拍相片
+function takePhoto() { 
 	 sessionStorage.removeItem('imagepath');
     // Take picture using device camera and retrieve image as base64-encoded string
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 100, destinationType: Camera.DestinationType.FILE_URI });
@@ -161,7 +159,7 @@ function resolveOnSuccess(entry){
     
     //new file name
     var newFileName = n + ".jpg";
-    var myFolderApp = "ppl";
+    var myFolderApp = "EyeCares";
 
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {      
     //The folder is created if doesn't exist
