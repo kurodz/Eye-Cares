@@ -1,1 +1,110 @@
 @charset "utf-8";
+/* CSS Document */
+
+.tab1 {
+}
+.tab1 img {
+	float: none;
+	width: 20em;
+}
+.news {
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	margin-left: -13px;
+	margin-top: 56px;
+
+
+}
+#pd {
+	position: absolute;
+	margin-top: -4px;
+	margin-left: 60%;
+}
+div img {
+	float: none;
+}
+#other div .ui-grid-b {
+}
+.ui-bar.ui-bar-a p img {
+	float: left;
+}
+#other div .ui-grid-b {
+	margin-left: 12px;
+	margin-top: -23px;
+}
+.ui-bar.ui-bar-a  {
+	margin-top: 33px;
+}
+.oper img {
+	width: 93px;
+	height: 97px;
+	position: relative;
+	float: none;
+	top: 32px;
+	padding-right: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen{
+}
+.oper h1 {
+	color: #848484;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 400;
+	text-shadow: 0px 0px;
+	font-family: "思源黑體 TW Bold";
+	margin-top: -39px;
+	padding-bottom: 30px;
+}
+.oper p {
+	font-family: "細明體-ExtB";
+	text-align: left;
+	margin-left: 69px;
+	color: #000000;
+
+}
+.header {
+	position: relative;
+	float: left;
+	width: 30px;
+	height: 38px;
+	margin-top: -8px;
+}
+
+@media screen and (max-width:360px){
+.header {
+	position: relative;
+	float: left;
+	width: 30px;
+	height: 38px;
+	margin-top: -8px;
+}
+
+}
+
+@media screen and (max-width:320px){
+.header {
+	position: relative;
+	float: left;
+	width: 30px;
+	height: 38px;
+	margin-top: -8px;
+}
+.tab1 img {
+	float: none;
+	width: 17em;
+}
+
+
+}

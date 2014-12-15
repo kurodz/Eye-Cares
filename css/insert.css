@@ -77,7 +77,7 @@ p.description_content{
 .inforight {
 	position: absolute;
 	clear: none;
-	margin-top: 305px;
+	margin-top: 352px;
 	left: 40%;
 	width: 55%;
 }
@@ -85,7 +85,8 @@ p.description_content{
 	position: absolute;
 	left: 40%;
 	clear: none;
-	width: 55%;
+	width: 46%;
+	margin-top: 39px;
 }
 #insertform .inforight img {
 	position: relative;
@@ -96,6 +97,14 @@ p.description_content{
 
 
 }
+div #Datepicker1 #title {
+	padding-left: 58px;
+	color: #9E2527;
+	position: absolute;
+	left: -5%;
+	margin-top: -30px;
+}
+
 
 
 
@@ -106,7 +115,7 @@ p.description_content{
 .inforight {
 	position: absolute;
 	clear: none;
-	margin-top: 125%;
+	margin-top: 136%;
 	left: 18%;
 	width: 66%;
 }
@@ -114,8 +123,8 @@ p.description_content{
 	position: absolute;
 	clear: none;
 	float: none;
-	margin-top: 59%;
-	left: 4%;
+	margin-top: 57%;
+	left: 12%;
 }
 div.ui-input-text {
 
@@ -135,8 +144,9 @@ div #Datepicker1 #title {
 	color: #9E2527;
 	position: absolute;
 	top: -12%;
-	margin-left: 6px;
+	margin-left: -30px;
 	width: 205px;
+	margin-top: 9px;
 }
 #showPhoto {
 	border: thin solid #000000;
@@ -178,6 +188,27 @@ div.description {
 
 
 
+
+
+
+}
+
+@media screen and (max-width:320px){
+#Datepicker1 {
+	position: absolute;
+	clear: none;
+	float: none;
+	margin-top: 67%;
+	left: 6%;
+}
+.inforight {
+	position: absolute;
+	clear: none;
+	margin-top: 158%;
+	left: 18%;
+	width: 72%;
+	margin-left: -6px;
+}
 
 
 

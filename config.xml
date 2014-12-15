@@ -2,13 +2,13 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id        = "Eye Cares"
-    versionCode = "6"
-    version   = "1.0.3">
+    versionCode = "10"
+    version   = "1.0.7">
 
 <name>Eye Cares</name>
 
 <description>
-I do Care.
+we care about you.
 </description>
 
 <author href="facebook.com/Kurodz" email="graph@livemail.tw">
@@ -16,12 +16,15 @@ Aron Hsu
 </author>
 
 
-<icon src="birdicon.png" gap:platform="android" />
-<gap:splash src="splash.png" gap:platform="android" />
+<icon src="ic_launcher.png" gap:platform="android" />
+<gap:splash src="default.png" gap:platform="android" />
+
+
 
 
 <access origin="*"/> <!-- allow all pages, use for development -->
 <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
+
 
 <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
 <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
@@ -31,7 +34,8 @@ Aron Hsu
 
 
 
+
 <preference name="android-minSdkVersion" value="7" />
-<preference name="orientation" value="portrait" />
+
 
 </widget>

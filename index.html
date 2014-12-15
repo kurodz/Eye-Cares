@@ -2,50 +2,455 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Eye Cares</title>
-<link href="jquery-mobile/jquery.mobile.theme-1.3.0.min.css" rel="stylesheet" type="text/css">
-<link href="jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/dataTables.css">
-<link rel="stylesheet" type="text/css" href="css/lightbox.css">
+<title>Eye Care</title>
+<link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
-
-<script src="jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script>
-<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
 <script src="js/index.js"></script>
-<script src="js/dataTables.js"></script>
-<script src="js/lightbox.js"></script>
-<script>
-/*
-$( document ).ready(function() {
-$('body').css({
-   "-webkit-transform": "rotate(90deg)"
-}); 
-}); */
-</script> 
-<style>
-tr,td {text-align:center;}
-</style>    
+<script src="phonegap.js"></script>
+<script src="PushNotification.js"></script>
 </head>
 
-<body onLoad="dbCreate();dbShow();">
+<body onLoad="dbCreate();init();notifi();">
 <div data-role="page" id="Main">
   <div data-role="header">
-    <h1>Eye Cares</h1>
+  
+<h1><img src="images/owl.png" alt="" width="50" height="68" class="header"/>Eye Cares</h1>
   </div>
-  <div data-role="content" id="myModal">
- </div>
-  
-  
-  
-  
-  <div data-role="footer" data-theme="c">
+  <div data-role="content">
+  <ul data-role="listview" data-inset="true">
+    
+    <li><a href="info.html" rel="external"><img src="images/Eye.png"/><h3>隱形眼鏡</h3>
+   
+</a>
+<li><a href="favor.html" rel="external"><img src="images/favorites-icon.png"/><h3>我的最愛</h3>
+   
+</a>
+    </li>
+   
+</ul>
+  <section class="oper">
+<p>
+
+<h1><img src="images/swipe.png" width="600" height="600" alt=""/>操作說明</h1></p>
+<p><strong>往</strong><em>右</em><strong>滑動 : 刪除資料</strong></p>
+<p><strong>向</strong><em>左</em><strong>滑動 : 加到我的最愛 </strong></p>
+  </section>
+  </div>
+  <div data-role="footer" data-position="fixed">
       <div data-role="navbar">
-      <ul>
-      <li><a href="insert.html" rel="external">新增資料</a></li>
-      
-      </ul>
-      </div>
+  <ul>
+  <li><a href="#Main"><img src="images/Main.png" width="30" height="35" alt=""/><br>主頁</a></li>
+  <li><a href="#heal" data-transition="fade"><img src="images/health.png" width="30" height="35" alt=""/><br>眼睛保健</a></li>
+  <li><a href="#news" data-transition="fade"><img src="images/News.png" width="30" height="35" alt=""/><br>最新消息</a></li>
+  <li><a href="#other" data-transition="fade"><img src="images/others.png" width="30" height="35" alt=""/><br>其他</a></li>
+  
+  </ul>
+  </div>
   </div>
 </div>
+
+
+
+
+
+
+<div data-role="page" id="heal">
+  <div data-role="header" data-add-back-btn="true">
+    <h1>眼睛保健</h1>
+  </div>
+		<div data-role="tabs">
+			<div data-role="navbar">
+				<ul>
+			      <li><a href="#one" data-theme="a" data-ajax="false">小互動</a></li>
+			      <li><a href="#two" data-theme="a" data-ajax="false">小常識</a></li>
+			      <li><a href="#three" data-theme="a" data-ajax="false">Q & A</a></li>
+			    </ul>
+			</div>
+
+			<div id="one" class="ui-content">
+			<p><h2>Test1</h2></p>
+        <section class="tab1"> <p>Step.1</p>
+<p><img src="images/test1.png" width="284" height="155"></p>
+<p>Step.2</p>
+<p><img src="images/test2.png" width="284" height="155"></p>
+<p>Step.3</p>
+<p><img src="images/test3.png" width="284" height="155"></p>
+<br><hr>
+<p><h2>Test2:  您的生活習慣是否已對眼睛造成負擔呢？</h2></p>
+<p> Q1.<img src="images/test2-1.png" width="245" height="110"></p><p>Q2.<img src="images/test2-2.png" width="246" height="108"></p><br>
+<p>Q3.<img src="images/test2-3.png" width="241" height="106"></p><p>Q4.<img src="images/test2-4.png" width="242" height="107"></p><br>
+<p>Q5.<img src="images/test2-5.png" width="241" height="103"></p><p>Q6.<img src="images/test2-6.png" width="241" height="107"></p><br>
+<p>Q7.<img src="images/test2-7.png" width="240" height="106"></p><p>Q8.<img src="images/test2-8.png" width="242" height="106"></p><br>
+<p>Q9.<img src="images/test2-9.png" width="238" height="103"></p><p>Q10.<img src="images/test2-10.png" width="239" height="99"></p>
+<br>
+      <p>診斷症狀 7個（含）＝ 眼睛負擔太大了哦！！<br>
+        診斷症狀4～6個（含）＝ 要好好注意眼睛哦！！<br>
+        診斷症狀3以下（含）＝ Good！！<br>
+    </p></section>
+			</div>
+            <div id="two" class="ui-content">
+			       <p><strong>一：<u>絕不配戴隱形眼鏡過夜 </u></strong></p>
+       <p>         雖然目前隱形眼鏡材質的透氧度大為提高，甚至有些隱形眼鏡強調可以持  續配戴不用取下。但是睡眠時角膜本已處於相對缺氧狀態，此時配戴隱形眼鏡會增加角膜受損與感染機會。</p>
+       <p><strong>二：<u>絕不配戴隱形眼鏡游泳</u></strong></p>
+       <p>在游泳時使用隱形眼鏡是很容易造成角膜感染的，應使用有度數的蛙鏡來矯正。 </p>
+       <p><strong>三：<u>絕不用舌頭或唾液來清潔隱形眼鏡</u></strong></p>
+       <p>口腔內充滿了各式各樣的細菌，是感染的可能來源。 </p>
+       <p><strong>四：<u>絕不只用水龍頭的水來清洗隱形眼鏡 </u></strong></p>
+       <p>國內自來水多半達不到生飲標準，水中也有可能含有致病細菌，用自來水清洗是相當危險的，最好使用生理食鹽水。 </p>
+       <p><strong>五：<u>不要隨意使用他人的隱形眼鏡 </u></strong></p>
+       <p>即使兩人的度數相近，但是角膜弧度可能大不相同，不合適的眼鏡可能造成角膜傷害。且共用隱形眼鏡就像共用牙刷一樣，是很不衛生且有可能感染疾病的。 </p>
+       <p><strong>六：<u>在配戴隱形眼鏡之前不要使用含有乳霜的香皂洗手 </u></strong></p>
+       <p>因為乳霜會殘存在您的手上污染眼鏡。 </p>
+       <p><strong>七：<u>不要在配戴隱形眼鏡時使用眼藥水 </u></strong></p>
+       <p>幾乎所有的藥水都含有防腐劑，藥水成分與防腐劑可能破壞鏡片材質，且隱形眼鏡吸附的藥品可能造成眼睛毒性。 </p>
+       <p><strong>八：<u>不要在眼睛不適時配戴隱形眼鏡 </u></strong></p>
+       <p>如配戴時發生不適，請立即取下，切莫遲疑。 </p>
+       <p><strong>九：<u>不要在駕車時使用角膜變色片<a name="_GoBack"></a></u></strong></p>
+       <p>這種以美容裝飾為目的的鏡片，因為上面有各種圖案及染色，會降低眼睛的對比敏感度，不宜在駕車時使用。 </p>
+       <p><strong>十：<u>配戴隱形眼鏡發生問題時不要諱疾忌醫 </u></strong></p>
+有些感染症是會導致失明的，儘速就醫才是最聰明的選擇。
+
+			</div>
+            <div id="three" class="ui-content">
+  <p></p><h2>Q1:避免紅眼睛的保養方法?</h2></p>
+  <p><strong>1.<u>保濕</u>：</strong><br>
+    不是只有美麗的臉龐需要保濕，眼睛也要常保濕潤。多眨眼睛可刺激淚腺分泌淚液。若是淚液不足，可以使用未加防腐劑，單劑型的人工淚液（即一天之內可丟棄的包裝），避免防腐劑在眼睛內堆積，傷害角膜。</p>
+  <p><strong>2.<u>保持眼睛的乾淨</u>：</strong><br>
+    可用一般市售的卸妝棉擦拭眼瞼周圍的油脂或分泌物。</p>
+  <p><strong>3.<u>配戴適合的隱形眼鏡</u>：</strong><br>
+    配戴前都需經眼科醫生的評估，隱形眼鏡分軟硬式，又各有不同材質，每個人又有不同環境、體質，戴錯了，反而變成對眼睛更大的刺激物。</p>
+  <p><strong>4.<u>每用眼半小時可休息5分鐘</u>：</strong><br>
+    休息可以是閉眼睛，也可以是讓眼睛改看遠方，或是動動眼珠，鬆弛眼球肌肉，避免疲勞。<br>
+    </p>
+  <p><strong>5.<u>避免使用生理食鹽水做人工淚液</u>：</strong><br>
+    生理食鹽水可以做配戴隱形眼鏡前沖洗用，但不具潤滑眼睛的效果，而且開瓶後的生理食鹽水，是微生物滋生的溫床。<br>
+    </p>
+  <p><strong>6.<u>在戶外避免風吹日曬</u>：</strong><br>
+    可以戴防風或防曬的眼鏡，以避免感染、刺激物、或淚水蒸發。<br>
+    </p>
+  <p><strong>7.<u>避免使用未經醫生指示的眼藥水</u>：</strong><br>
+    有些眼藥水含血管收縮劑，偶而點可以紓解一時充血的問題。但如長期使用，一旦養成依賴性，不點時會充血更厲害，眼睛就更紅。此外，有的藥水含類固醇成分，具有消炎作用，可以減緩發炎引起的紅眼睛，但是，點久了，會使眼壓升高導致青光眼。眼藥水雖可為眼睛帶來一時的舒服，但也可能掩蓋了真正的問題。<br>
+    </p>
+  <p><strong>8.<u>避免生病時戴隱形眼鏡</u>：</strong><br>
+    生病時，如感冒，身體免疫力較差，原來戴隱形眼鏡眼睛的防衛機能就降低，加上又生病，淚液品質也較不好，如白血球下降或其他免疫物質濃度下降，眼睛就易遭感染，或是一旦有刺激物就易紅腫。</p>
+  <p><h2>Q2:如何正確保養隱形眼鏡?</h2>
+  </p>
+  <p>1.一定要用手搓洗鏡片<br>
+    </p>
+  <p>2.每1∼2年更換新的隱形眼鏡<br>
+    </p>
+  <p>3.鏡片不可放在生理食鹽水中保存。<br>
+    </p>
+  <p>4.不同廠牌的隱形眼鏡，不可交互使用<br>
+    </p>
+  <p>5.每週固定去蛋白<br>
+    </p>
+  <p>6.藥水也有使用期限<br>
+    </p>
+  <p>7.隱形眼鏡配戴前，先沖生理食鹽水。<br>
+    </p>
+  <p>8.隱形眼鏡不可以長期浸泡在藥水中<br>
+    </p>
+  <p>9.半年一次送原廠保養<br>
+    </p>
+  <p>10.雙氧消毒系統，一定要中和後才可使用<br>
+    </p>
+  <p>11.眼睛紅，最好先取下隱形眼鏡<br>
+    </p>
+  <p>12.定期更換隱形眼鏡的保存盒  </p>
+  <p><h2>Q3:戴隱形眼鏡可以點眼藥水嗎?</h2></p>
+  <p> 一般眼藥水含有小分子藥物或防腐劑，軟式隱形眼鏡的材質也特別容易吸附異物，殘留物便會影響隱形眼鏡品質，建議患者點眼藥水後稍待20分鐘以上再戴隱形眼鏡，也建議盡量減少佩戴隱形眼鏡時間，才有利降敏的療效。</p>
+  <p><h2>Q4:如何挑選人工淚液?</h2></p>
+  <p>■選擇適合自己的人工淚液：人工淚液有很多種，成分也不盡相同，最安全的方法是找合格的眼科醫生，經過仔細檢查與評估，再找出適合自己的人工淚液。</p>
+  <p>    ■選擇不含防腐劑的產品：防腐劑也有很多種，有些含汞，容易引起過敏或傷害。眼睛乾燥時會比較敏感，若是碰到防腐劑，無異是雪上加霜。一般符合標準的產品都會清楚標明是否添加防腐劑。<br>
+    </p>
+  <p>■注意使用期限：不含防腐劑的人工淚液，當然也就容易變質或污染。因此，要注意使用期限，合格的產品會清楚的標示使用期限。<br>
+    使用前還要先看看，藥水是否變質？是否清晰透明？顏色有沒有改變？若有變質，一定要丟掉。<br>
+    </p>
+  <p>■戴隱形眼鏡時，最好不要點人工淚液：戴著隱形眼鏡點藥水，鏡片吸收的濃度是角膜的數倍，長期下來，角膜的上皮細胞會損害，視力也會模糊，嚴重的還會引起角膜潰瘍。<br>
+    只有在眼睛乾到剝不下鏡片時，才使用人工淚液，得到一些滋潤，否則，應該避免戴著隱形眼鏡點人工淚液。<br>
+    </p>
+  <p>■使用次數不宜太頻繁：一天之中最好不超過6次，兩次中間至少要隔10分鐘。因為點得太頻繁，反而會破壞正常的淚液成分，帶來反效果。</p>
+  <p><h2>Q5:如何避免眼睛乾澀?</h2></p>
+  <p>1.保持正常的作息，避免熬夜。睡眠不足，眼睛容易疲勞、乾澀不適。<br>
+    </p>
+  <p>2.攝取含維生素A、C、E等抗氧化劑的食物，如胡蘿蔔、南瓜、芭樂、堅果等，有益眼睛，也有助於皮脂腺正常分泌。<br>
+    </p>
+  <p>3.讓眼睛定時的休息。看書或打電腦50分鐘之後，就應該休息10分鐘。喝水、上廁所、走一走、看看遠方。<br>
+    </p>
+  <p>4.提醒自己「多眨眼睛」。眨眼睛是不自主的，但要提醒自己多眨眼睛，而且要用力的眨，最好做一個完全的眨眼動作，或者眨一下之後，再閉幾秒鐘，讓眼球獲得滋潤。<br>
+    </p>
+  <p>5.按摩或熱敷。眼睛疲倦時，可以按摩眼眶骨的地方，淚腺正位於外側上方，按摩能幫助淚腺的分泌。熱敷也有同樣的效果，用一條溫毛巾，或者用一杯溫開水，閉上眼睛對著它，大約5分鐘，水溫大約是喝茶時可以忍受的溫度。<br>
+    </p>
+  <p>6.在冷氣房裏，放一杯水或一盆水生植物。這樣可在乾燥的環境，增加一點濕度。<br>
+    </p>
+  <p>7.調整電腦螢幕的距離和角度。螢幕和眼睛要距離30～45公分，而且最好低於眼睛視線，因為仰視螢幕，會增加眼球曝露的面積，讓淚液蒸發得較快。<br>
+    </p>
+  <p>8.正確的配戴隱形眼鏡。正常的配戴時間是一天8～12個小時，睡眠不足時，要減少配戴的時間。拋棄式的眼鏡，時間到了就要淘汰，因為材質會衰退，透氧率會改變，也會影響眼睛的乾燥程度。<br>
+    </p>
+  <p>9.注意口服藥的成分。安眠藥、鎮定劑或過敏體質所吃的抗組織胺都會影響副交感神經，而交感神經和副交感神經都和淚腺分泌有關。<br>
+    </p>
+  <p>10.積極治療眼球表面的疾病。砂眼、慢性結膜炎或眼瞼炎容易讓眼睛結膜形成結疤，破壞角膜上皮細胞，也會破壞分泌淚液的細胞。因此，眼睛如果有任何問題，應該儘快找眼科醫生治療，避免眼球細胞被破壞，形成乾眼症。  </p>
+			</div>
+			
+		</div>
+</div>
+<div data-role="page" id="product">
+  <div data-role="header" data-add-back-btn="true">
+    <h1>各家產品</h1>
+  </div>
+  <div data-role="content">
+  
+    	<div data-role="collapsible-set">
+    <div data-role="collapsible" data-collapsed="true">
+    <h3>博士倫</h3>
+    <p><img src="images/untitled.png" width="205" height="221"></p>
+ <p>日拋
+ </p>
+ <p>舒視能每日拋棄式隱形眼鏡
+   產品特色和優點：
+   設計以雙眼運作為概念
+   高含水 : 鏡片含水量78%
+   高保濕 : 模擬淚膜脂質層，保濕及維持視覺清晰
+   高透氧 : 滿足雙眼所需氧氣量
+   前表面非球面光學設計，提供清晰無像差的視覺品質
+   阻隔UVA及UVB </p>
+   <p><img src="images/untitled2.png" width="185" height="200"></p>
+   <p>雙週     </p>
+   <p> 舒服能59雙週拋棄式隱形眼鏡
+     產品特色和優點：
+     含水量達 59% </p>
+     <p><img src="images/untitled3.png" width="174" height="187"></p>
+     <p>老花        </p>
+     <p>舒服能漸進多焦點拋棄式隱形眼鏡
+       產品特色和優點：
+       低含水量、可矯正屈光不正及老花眼 </p>
+     <p><a href="https://www.facebook.com/BauschandLombTW">https://www.facebook.com/BauschandLombTW</a></p>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+    <h3>嬌生</h3>
+    <p><img src="images/untitled4.png" width="225" height="92"></p>
+ <p>日拋    </p>
+ <p>恆潤氧每日拋棄式隱形眼鏡
+   產品特色和優點：
+   讓雙眼自由呼吸般，就像沒戴鏡片一樣
+   結合優異的透氧、高等級 UV 防護與HYDRACLEAR®1的極致保濕科技 </p>
+   <p><img src="images/untitled5.png" width="231" height="136"></p>
+   <p>雙週拋      </p>
+   <p>歐舒適二週拋棄式隱形眼鏡 </p>
+   <p><a href="https://www.facebook.com/ACUVUETW?fref=ts">https://www.facebook.com/ACUVUETW?fref=ts</a></p>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+    <h3>愛爾康/視康</h3>
+    <p><img src="images/untitled6.png" width="252" height="98"></p>
+ <p>日拋    </p>
+ <p>視康多水潤日拋隱形眼鏡
+   產品特色和優點：
+   含31%的nelfilcon A 及69%的水。
+   鏡片含Cu-phthalocyanine，呈淡藍色幫助操作。
+   鏡片個別包裝於含緩衝食鹽水的密封水盒中
+   緩衝食鹽水中含至多0.05% 的Poloxamer。鏡片經蒸氣消毒滅菌。 </p>
+   <p><img src="images/untitled7.png" width="223" height="141"></p>
+   <p>月拋      </p>
+   <p>視康舒適氧高透氧月拋
+     產品特色和優點：
+     矽水凝膠材質， 透氧量高達 138 Dk/t
+     超越閉眼時角膜所需最低透氧量125 Dk/t 之隱形眼鏡
+     保存液添加保濕因子
+     Plasma鏡面處理技術，減少蛋白質、油脂沉積， 使鏡片光滑親水增加濕潤度
+     低含水量 33%，降低鏡片脫水現象 </p>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+    <h3>帝康</h3>
+    <p><img src="images/untitled8.png" width="175" height="138"></p>
+ <p>日拋    </p>
+ <p>帝康臻魅彩色日拋軟性隱形眼鏡
+   產品特色和優點：
+   
+   含水量42% </p>
+   <p><img src="images/untitled9.png" width="228" height="134"></p>
+   <p>雙週拋      </p>
+   <p>精華帝康彩色抛棄式軟性隱形眼鏡
+     產品特色和優點：
+     含水量42%
+     辨識色彩：黑色 </p>
+     <p><img src="images/untitled10.png" width="204" height="160"></p>
+     <p>月拋        </p>
+     <p>帝康彩色月拋軟性隱形眼鏡
+       產品特色和優點：
+       含水量42%
+       辨識色彩：黑色、棕色 </p>
+       <p><img src="images/untitled11.png" width="245" height="163"></p>
+       <p>長戴式          </p>
+       <p>帝康軟性非球面隱形眼鏡
+         產品特色和優點：
+         弧度：S、L (尚有XL特大弧度可供訂製)
+         辨識色彩：白色、藍色 </p>
+       <p><a href="https://www.facebook.com/taiwanticon">https://www.facebook.com/taiwanticon</a></p>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+    <h3>加美</h3>
+    <p><img src="images/untitled12.png" width="256" height="96"></p>
+ <p>日拋    </p>
+ <p>加美彩色美瞳日拋
+   產品特色和優點：
+   採高科技色彩夾層技術
+   精心璀璨花紋設計
+   親水性材質，保濕性強
+   美瞳系列：美瞳棕、美瞳黑、美瞳紫 </p>
+   <p><img src="images/untitled13.png" width="237" height="95"></p>
+   <p>雙週拋      </p>
+   <p>加美雙週拋棄式
+     產品特色和優點：
+     適合亞熱帶生活型態配戴的隱形眼鏡。
+     邊弧曲線設計，使淚液氧氣保持舒暢，濕潤性極佳。
+     鏡片柔軟且具高度韌性，不易皺摺，裝卸方便。
+     特別適合淚液分泌較少及長期冷氣房工作者。 </p>
+     <p><img src="images/untitled14.png" width="284" height="104"></p>
+     <p>月拋        </p>
+     <p>加美醉心彩色月拋
+       產品特色和優點：
+       立體外圍、突顯大眼效果
+       一體成型包覆式設計
+       舒適保濕
+       自然圖紋、美麗加倍 </p>
+       <p><img src="images/untitled15.png" width="292" height="94"></p>
+       <p>長戴式          </p>
+       <p>加美38保濕彩晶藍片
+         產品特色和優點：
+         鏡片保濕效果極佳，含水量38%特別適合淚液分泌較少，以及長期使用隱形眼鏡者。
+         1.材質穩定性良好，舒適清晰不易沾附雜質。
+         2.鏡片柔軟，矯正效果佳，不易增加眼睛負擔。 </p>
+       <p><strong><a href="http://ppt.cc/9XUL">http://ppt.cc/9XUL</a></strong></p>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+    <h3>海昌</h3>
+    <p><img src="images/untitled16.png" width="215" height="175"></p>
+ <p>日拋    </p>
+ <p>海昌非球面日拋隱形眼鏡
+   產品特色和優點：
+   1. 38%含水量
+   2.玻尿酸強效保濕因子 (Hyaluronic acid)
+   3.海藻糖 (Trehalose)
+   4. AI(Artificial Intellectual) 智能雙非球面
+   5.超薄親水性材質 (中心厚度0.044~0.131設計) </p>
+   <p><img src="images/untitled17.png" width="187" height="234"></p>
+   <p>月拋      </p>
+   <p>海昌非球面月拋隱形眼鏡
+     產品特色：
+     1.	由polymacon所製成的軟性親水性隱形眼鏡
+     2.	添加天然玻尿酸及海藻糖。
+     3.	雙非球面鏡片，使內面表面中央彎曲，周圍逐漸趨向平坦。 </p>
+   <p><a href="https://www.facebook.com/hydron.tw">https://www.facebook.com/hydron.tw</a></p>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+    <h3>晶碩</h3>
+    <p><img src="images/untitled18.png" width="201" height="201"></p>
+ <p>日拋/透明日拋    </p>
+ <p>產品特色：
+   含水量：58%
+   抗 U V：YES
+   B. C.：8.5
+   D I A.：14.2
+   成份：含有植物性保濕因子、玻尿酸 </p>
+   <p><img src="images/untitled19.png" width="234" height="234"></p>
+   <p>雙週拋/彩色雙週拋迷霧黑      </p>
+   <p>產品特色：
+     含水量：58%
+     抗 U V：YES
+     B. C.：8.5
+     D I A.：14.2
+     成份：含有植物性保濕因子、玻尿酸 </p>
+   <p><a href="https://www.facebook.com/pegavision">https://www.facebook.com/pegavision</a></p>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+    <h3>諾貝爾</h3>
+    <p><img src="images/untitled20.png" width="164" height="164"></p>
+ <p>日拋/諾貝爾日拋    </p>
+ <p>產品特色：
+   鏡片材質:HEMA EGDMA(第一類素材)
+   含水量:38%
+   顏色:淡藍 </p>
+   <p><img src="images/untitled21.png" width="164" height="164"></p>
+   <p>雙週拋/諾貝爾雙週拋      </p>
+   <p>產品特色：
+     鏡片材質:HEMA EGDMA(第一類素材)
+     含水量:38%
+     顏色:淡藍 </p>
+     <p>&nbsp;</p>
+     <p>諾貝爾月拋、季拋        </p>
+     <p>產品特色：
+       鏡片材質:HEMA EGDMA(第一類素材)
+       含水量:38%
+       顏色:淡藍 </p>
+       <p><img src="images/untitled22.png" width="172" height="172"></p>
+       <p>諾貝爾變色片          </p>
+       <p>產品特色：
+         鏡片材質:HEMA EGDMA(第一類素材)
+         含水量:38%
+         顏色:淡藍 </p>
+       <p><a href="http://www.nomel.com.tw/news-list.php">http://www.nomel.com.tw/news-list.php</a></p>
+</div>
+
+    
+    </div>  
+  
+  
+  
+  
+  
+  
+  </div>
+</div>
+
+
+<div data-role="page" id="news">
+  <div data-role="header" data-add-back-btn="true">
+    <h1>最新消息</h1>
+  </div>
+  <div data-role="content">
+   <section>
+      <article>
+        <iframe src="http://1.34.42.165/pj/news.html" FRAMEBORDER="0" class="news">
+        </iframe>        
+      </article>
+    </section>  
+    <div id="pd" style="text-align:right"><a href="#product" data-transition="fade" style="text-decoration:none;color:#5B4522">各家產品資訊</a></div>
+  	  	
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div data-role="page" id="other">
+  <div data-role="header" data-add-back-btn="true">
+    <h1>其他</h1>
+  </div>
+  <div data-role="content">
+  
+<div class="ui-grid-b">
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="width:250px;height:150px;"><p>如有建議及反饋，歡迎指教！</p>
+        <p> <img src="images/Gmail-icon.jpg" width="32" height="24" alt=""/> : <a href="mailto:eyecares06@gmail.com">eyecares06@gmail.com</a></p>
+        <p><img src="images/facebookicon.jpg" width="30" height="39" alt=""/>：<a href="http://ppt.cc/YoU3">http://ppt.cc/YoU3</a></p></div></div>
+                    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="width:250px;height:400px;"> <p>寶島眼鏡（陽明街店）</p>
+        <p>Line QR Code :</p>
+        <p><img src="images/QRcode.jpg" width="260" height="260" alt=""/></p>
+        <p>Line ID: 02-2255-8263 </p></div></div>
+                </div> 
+                <br><input type="button" value="清除資料" data-icon="alert" data-iconpos="bottom" onClick="dbDrop();">
+  </div>
+</div>
+
+
+
+
+
 </body>
 </html>

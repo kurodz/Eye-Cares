@@ -3,14 +3,33 @@ var db;   // 建立全域變數
 
 // Web SQL Database
 
+function dbCreate() {  // 建立資料庫
+		db = openDatabase("myDb", "1.0", "my First Db", 2*1020 * 1024);
+             if ( db != null ) {db.transaction(function(t) {t.executeSql("create table if not exists table01 (id INTEGER PRIMARY KEY , username VARCHAR(24), company VARCHAR(24), memo VARCHAR(24) , dt DATETIME , hl DATETIME , pname INTEGER , color INTEGER, Left INTERGER, Right INTERGER, Price INTERGER)", null,
+                 function() {},
+                 function(tx, err) { alert("建立資料庫失敗!"); 
+			  });
+			  
+           });
+		   db.transaction(function(t) {t.executeSql("create table if not exists favor (id INTEGER PRIMARY KEY , username VARCHAR(24), company VARCHAR(24), memo VARCHAR(24) , dt DATETIME , hl DATETIME , pname INTEGER , color INTEGER, Left INTERGER, Right INTERGER, Price INTERGER)", null,
+                 function() {},
+                 function(tx, err) { alert("建立資料庫失敗!"); 
+			  });
+			  
+           });
+        } 
+	}
 
-db = openDatabase("myDb", "1.0", "my First Db", 2*1020 * 1024);
+
 
 var d = new Date();
 var n = d.getTime();
 var fName = n;
 
 function dbInsert() {  // 新增資料
+
+db = openDatabase("myDb", "1.0", "my First Db", 2*1020 * 1024);
+
         if (!db){
             alert('資料庫尚未建立！');
             return;
@@ -88,9 +107,9 @@ function dbInsert() {  // 新增資料
 				}	
 		db.transaction(function(t) {
 			
-			t.executeSql("INSERT INTO table01 (username,company,memo,dt,hl,pname,color,Left,Right) VALUES (?,?,?,?,?,?,?,?,?)",
+			t.executeSql("INSERT INTO table01 (username,company,memo,dt,hl,pname,color,Left,Right,Price) VALUES (?,?,?,?,?,?,?,?,?,?)",
 			
-			[cname, cpy, memo, sDate, hhh, fName, color, lefteye, righteye],
+			[cname, cpy, memo, sDate, hhh, fName, color, lefteye, righteye, price],
 			function() { alert('資料新增成功!！');window.location.href="index.html";},
 			function() { alert("資料新增失敗!"); });
 					
@@ -108,10 +127,11 @@ function dbDrop() {  // 刪除資料表
 		db = openDatabase("myDb", "1.0", "my First Db", 2*1020 * 1024);
         db.transaction(function(t) {
 	        t.executeSql("DROP TABLE table01");
+			t.executeSql("DROP TABLE favor");
 			alert("資料表已清除");
 			window.location.reload();
         });
-		
+
 	}
 	else{
 		return;
@@ -183,5 +203,5 @@ function successMove(entry) {
 
 function resOnError(error) {
     alert(error.code);
-}
+}//Camera End
 

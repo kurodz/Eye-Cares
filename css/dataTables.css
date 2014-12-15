@@ -486,9 +486,15 @@ table.dataTable td {
 
 
 
+
+
+
+
+
   *zoom: 1;
 	zoom: 1;
 	margin-top: 54px;
+	left: -9px;
 }
 
 }
@@ -592,6 +598,22 @@ div#popup_content {
 	position: absolute;
 	margin-top: -36px;
 }
+/*
+ * Control feature layout
+ */
+.dataTables_wrapper {
+	position: relative;
+	clear: both;
+
+
+
+
+
+  *zoom: 1;
+	zoom: 1;
+	left: -10px;
+}
+
 
 
 }
